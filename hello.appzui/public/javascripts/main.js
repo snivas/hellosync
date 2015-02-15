@@ -98,27 +98,4 @@ function populatestatusTable() {
     });
 };
 
-function populatestatusTable() {
-    // Empty content string
-    var tableContent = '';
-
-    // jQuery AJAX call for JSON
-    $.getJSON( '/history', function( data ) {
-
-        // For each item in our JSON, add a table row and cells to the content string
-        $.each(data, function(){
-            tableContent += '<tr>';
-            tableContent += '<td>' + this.light + '</td>';
-            tableContent += '<td>' + (this.state ? "On" : "Off") + '</td>';
-            tableContent += '<td>' + this.timestp + '</td>';            
-            tableContent += '</tr>';
-        });
-
-        // Inject the whole content string into our existing HTML table
-        $('#history table tbody').html(tableContent);
-    });
-};
-
-
-
 populatestatusTable();
