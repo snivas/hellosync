@@ -1,5 +1,55 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+	h1= title
+	div.wrapper
+		div.controlform
+			fieldset
+				label.switchlabel Red Light
+				div.onoffswitch
+					input#redonoffswitch(type="checkbox", name="redonoffswitch").onoffswitch-checkbox
+					label.onoffswitch-label(for="redonoffswitch")
+						span.onoffswitch-inner
+						span.onoffswitch-switch
+			fieldset
+				label.switchlabel Yellow Light 
+				div.onoffswitch
+					input#yellowonoffswitch(type="checkbox", name="yellowonoffswitch").onoffswitch-checkbox
+					label.onoffswitch-label(for="yellowonoffswitch")
+						span.onoffswitch-inner
+						span.onoffswitch-switch
+			fieldset
+				label.switchlabel Green Light
+				div.onoffswitch
+					input#greenonoffswitch(type="checkbox", name="greenonoffswitch").onoffswitch-checkbox
+					label.onoffswitch-label(for="greenonoffswitch")
+						span.onoffswitch-inner
+						span.onoffswitch-switch
+		div.trafficlight
+			div.light.red
+			div.light.yellow
+			div.light.green
+	br
+	h4 Get Status
+		br
+		br
+		select#lightsid
+			option 	redon
+			option  yellowon
+			option  greenon
+		input#ajaxbutton(type="button", name="ajaxbutton", value="AjaxButton") 
+		div#ajaxstate
+			table
+				thead
+					th Light
+					th State
+				tbody
+	br
+	h4 Log
+	div#history
+		table
+			thead
+				th Light
+				th State
+				th TimeStp
+			tbody
