@@ -2,6 +2,7 @@ extends layout
 
 block content
 	h1= title
+	p This syncronizes the light state across all the clients in realtime
 	div.wrapper
 		div.controlform
 			fieldset
@@ -31,13 +32,16 @@ block content
 			div.light.green
 	br
 	h4 Get Status
+		p This gets the status of the lights from DB using GET on /states/{lightid} 
 		br
 		br
 		select#lightsid
 			option 	redon
 			option  yellowon
 			option  greenon
-		input#ajaxbutton(type="button", name="ajaxbutton", value="AjaxButton") 
+		a#ajaxbutton(class="btn") AjaxButton 
+		br
+		br
 		div#ajaxstate
 			table
 				thead
@@ -46,6 +50,7 @@ block content
 				tbody
 	br
 	h4 Log
+	p This is log of last 10 entries fetched using GET on /history 
 	div#history
 		table
 			thead
